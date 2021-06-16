@@ -1,0 +1,6 @@
+<svg id="alerts" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17">
+  <circle id="Ellipse_1" data-name="Ellipse 1" cx="7.5" cy="7.5" r="7.5" transform="translate(0.5 0.5)" fill="none" stroke="#01ecb3" stroke-width="1"/>
+  <circle id="Ellipse_2" data-name="Ellipse 2" cx="5.5" cy="5.5" r="5.5" transform="translate(2.5 2.5)" fill="none" stroke="#01ecb3" stroke-width="1"/>
+  <path id="Path_1" data-name="Path 1" d="M8,10.5A2.75,2.75,0,1,0,5.25,7.75,2.75,2.75,0,0,0,8,10.5Z" fill="#01ecb3"/>
+  <path id="Path_2" data-name="Path 2" d="M14,14.076a1.867,1.867,0,0,0-.294-1.013l-.421.269.421-.269a1.867,1.867,0,0,0-.8-.693h0l-.008,0A11.95,11.95,0,0,0,8,11.375a11.949,11.949,0,0,0-4.9.992h0l-.008,0A1.868,1.868,0,0,0,2,14.076m12,0h0l-.5,0H14Zm0,0V16.5H2V14.076m0,0H2l.5,0H2Z" fill="#01ecb3" stroke="#113365" stroke-width="1"/>
+</svg>
