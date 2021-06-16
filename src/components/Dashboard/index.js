@@ -46,7 +46,7 @@ const Dashboard = () => {
 export default Dashboard;
 
 const Board = styled.div`
-  position: absolute;
+  position: fixed;
   background: #113365;
   width: 250px;
   min-height: 940px;
