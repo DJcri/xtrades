@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Header from "./Header";
 import Trending from "./Trending/index";
 import Recent from "./Recent/index";
+import Modal from "./Modal";
 
 const Alerts = () => {
   return (
@@ -9,6 +10,7 @@ const Alerts = () => {
       <Header />
       <Trending />
       <Recent />
+      <Modal />
     </Page>
   );
 };

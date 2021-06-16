@@ -44,6 +44,7 @@ const Bar = styled.div`
   border-bottom: 1px rgba(60, 60, 67, 0.08) solid;
   nav {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 400px;
     img {
