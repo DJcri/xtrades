@@ -26,6 +26,7 @@ const Dashboard = ({ dashboardMini, setDashboardMini }) => {
       font-size: 23px;
       margin-top: 2rem;
       margin-left: ${dashboardMini ? "0" : "-3rem"};
+      cursor: pointer;
     }
     a,
     .collapse {
@@ -66,9 +67,10 @@ const Dashboard = ({ dashboardMini, setDashboardMini }) => {
     }
     .links {
       list-style: none;
-      margin-top: 4rem;
+      margin-top: 5vh;
       padding: ${dashboardMini ? "0" : "1rem"};
       width: ${dashboardMini ? "60%" : "218px"};
+      padding-bottom: 0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -79,9 +81,12 @@ const Dashboard = ({ dashboardMini, setDashboardMini }) => {
     }
     .upgrade {
       background: rgba(245, 248, 251, 0.1);
-      margin: 4rem auto;
+      margin: 0 auto;
+      margin-top: 2vh;
       width: 216px;
-      height: 248px;
+      max-height: 248px;
+      min-height: 90px;
+      height: 20vh;
       border-radius: 15px;
       display: flex;
       flex-direction: column-reverse;
@@ -92,7 +97,7 @@ const Dashboard = ({ dashboardMini, setDashboardMini }) => {
     }
     .collapse,
     .expand {
-      margin-top: 5rem;
+      margin-top: 2vh;
       margin-left: ${dashboardMini ? "0" : "1rem"};
     }
   `;

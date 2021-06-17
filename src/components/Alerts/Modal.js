@@ -22,7 +22,12 @@ const strategies = [
 
 const Modal = ({ alertDetails, setAlertDetails }) => {
   return (
-    <Box className={alertDetails ? "" : "hidden"}>
+    <Box
+      onClick={() => {
+        setAlertDetails(null);
+      }}
+      className={alertDetails ? "" : "hidden"}
+    >
       <div
         onClick={() => {
           setAlertDetails(null);
