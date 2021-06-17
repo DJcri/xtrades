@@ -223,6 +223,7 @@ const Box = styled.div`
         border-radius: 0;
         border: none;
         margin-bottom: 0;
+        margin-right: -4rem;
       }
       .tip {
         padding: 1rem;
@@ -230,6 +231,7 @@ const Box = styled.div`
         flex: 1;
         display: flex;
         align-items: center;
+        z-index: 12;
       }
     }
     .trade-body {
