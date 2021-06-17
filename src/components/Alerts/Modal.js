@@ -243,8 +243,7 @@ const Box = styled.div`
       position: relative;
       .pfp,
       .emoji,
-      .attach,
-      .send-btn {
+      .attach {
         width: 50px;
         position: absolute;
         bottom: 18rem;
@@ -261,8 +260,10 @@ const Box = styled.div`
         left: 5rem;
       }
       .send-btn {
+        position: absolute;
         bottom: 15rem;
-        left: 35rem;
+        right: 2.5rem;
+        z-index: 12;
       }
       .img-container {
         overflow: hidden;
@@ -280,8 +281,9 @@ const Box = styled.div`
     }
   }
   .close-btn {
-    position: relative;
-    left: 29%;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     width: 32px;
     height: 32px;
     background: darkgray;
@@ -304,6 +306,7 @@ const Box = styled.div`
     display: flex;
     background: white;
     width: 60%;
+    min-width: 1000px;
     height: 816px;
     z-index: 6;
     border-radius: 15px;
