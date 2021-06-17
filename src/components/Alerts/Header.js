@@ -23,8 +23,10 @@ const Header = () => {
         <Button className="invite-btn">
           <img src={add} alt="add" /> Invite a friend
         </Button>
-        <img src={bell} alt="bell" />
-        <div className="bell-indicator"></div>
+        <div className="bell-container">
+          <img src={bell} alt="bell" />
+          <div className="bell-indicator"></div>
+        </div>
         <img src={messages} alt="messages" />
         <img src={settings} alt="settings" />
         <div className="pfp">
@@ -53,14 +55,17 @@ const Bar = styled.div`
       width: 20px;
       cursor: pointer;
     }
+    .bell-container {
+      position: relative;
+    }
     .bell-indicator {
       background: #00a5ea;
       width: 10px;
       height: 10px;
       border-radius: 10px;
       position: absolute;
-      right: 11.8rem;
-      top: 0.2rem;
+      right: -0.5rem;
+      top: -0.5rem;
     }
   }
   .pfp {

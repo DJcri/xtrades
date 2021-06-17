@@ -168,7 +168,7 @@ const Box = styled.div`
     width: 100%;
     height: 8rem;
     position: relative;
-    bottom: 12rem;
+    bottom: 1rem;
     padding: 2rem;
     padding-left: 5rem;
     padding-right: 7rem;
@@ -251,14 +251,14 @@ const Box = styled.div`
       .attach {
         width: 50px;
         position: absolute;
-        bottom: 18rem;
+        bottom: 7rem;
         left: 3rem;
         z-index: 12;
       }
       .emoji,
       .attach {
         width: 15px;
-        bottom: 15rem;
+        bottom: 4rem;
         cursor: pointer;
       }
       .attach {
@@ -266,12 +266,13 @@ const Box = styled.div`
       }
       .send-btn {
         position: absolute;
-        bottom: 15rem;
+        bottom: 4rem;
         right: 2.5rem;
         z-index: 12;
       }
       .img-container {
         overflow: hidden;
+        height: 10vh;
         img {
           position: relative;
           left: -2rem;
