@@ -40,7 +40,7 @@ const Page = styled.div`
       right: 2rem;
       pointer-events: none;
     }
-    #trending-sort {
+    select {
       border: none;
       background: #f5f8fb;
       color: #a2b1c3;

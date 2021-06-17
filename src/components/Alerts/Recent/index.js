@@ -201,8 +201,8 @@ const Recent = ({ setAlertDetails }) => {
           </li>
         </ul>
         <div className="sort">
-          <label for="trending-sort">Sort by:</label>
-          <select id="trending-sort">
+          <label for="recent-sort">Sort by:</label>
+          <select id="recent-sort">
             <option value="week">All</option>
           </select>
           <img src={show} alt="show" />
@@ -257,6 +257,9 @@ const Section = styled.div`
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
+  }
+  .trades {
+    margin-right: 1rem;
   }
   .info-headers,
   .card {
