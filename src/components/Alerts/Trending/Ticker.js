@@ -41,6 +41,10 @@ const Card = styled.div`
   position: relative;
   overflow: hidden;
   color: #a2b1c3;
+  transition: 0.5s;
+  :hover {
+    transform: scale(1.1);
+  }
   .percentage {
     display: flex;
     position: absolute;

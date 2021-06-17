@@ -1,16 +1,23 @@
 import styled from "styled-components";
 import Header from "./Header";
 import Trending from "./Trending/index";
-import Recent from "./Recent/index";
+import { Recent } from "./Recent/index";
 import Modal from "./Modal";
+import { useEffect, useState } from "react";
 
-const Alerts = () => {
+const Alerts = ({ dashboardMini }) => {
+  const [alertDetails, setAlertDetails] = useState(null);
+
+  useEffect(() => {
+    console.log(dashboardMini);
+  }, [dashboardMini]);
+
   return (
-    <Page>
+    <Page className={`${dashboardMini ? "fullsize" : ""}`}>
       <Header />
       <Trending />
-      <Recent />
-      <Modal />
+      <Recent setAlertDetails={setAlertDetails} />
+      <Modal alertDetails={alertDetails} setAlertDetails={setAlertDetails} />
     </Page>
   );
 };
@@ -19,6 +26,9 @@ export default Alerts;
 
 const Page = styled.div`
   margin-left: 250px;
+  .hidden {
+    visibility: hidden;
+  }
   .sort {
     label {
       color: #647189;

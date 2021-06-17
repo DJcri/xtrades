@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="emoji" transform="translate(-0.5)">
+    <path id="Path_43" data-name="Path 43" d="M8.5,15.5A7.5,7.5,0,1,0,1,8,7.5,7.5,0,0,0,8.5,15.5Z" fill="none" stroke="#a2b1c3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_44" data-name="Path 44" d="M11.5,7a1,1,0,1,0-1-1A1,1,0,0,0,11.5,7Z" fill="#a2b1c3"/>
+    <path id="Path_45" data-name="Path 45" d="M5.5,7a1,1,0,1,0-1-1A1,1,0,0,0,5.5,7Z" fill="#a2b1c3"/>
+    <path id="Path_46" data-name="Path 46" d="M11.5,9.8a3.5,3.5,0,0,1-6,0" fill="none" stroke="#a2b1c3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

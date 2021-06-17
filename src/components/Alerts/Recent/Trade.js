@@ -5,7 +5,7 @@ import bookmark from "../../../img/bookmark.svg";
 import bookmarked from "../../../img/bookmarked.svg";
 import comment from "../../../img/comment.svg";
 
-const Trade = ({ trade }) => {
+const Trade = ({ trade, setAlertDetails, compressed }) => {
   const {
     user,
     share,
@@ -19,17 +19,24 @@ const Trade = ({ trade }) => {
   } = trade;
 
   return (
-    <Card className={`card ${close && "closed"}`}>
-      <li className="trader">
-        <div className="pfp">
-          <img src={user.pfp} alt="pfp" />
-        </div>
-        <div className="count">{user.count}</div>
-        <div className="names">
-          <div className="name">{user.name}</div>
-          <div className="at">{"@" + user.at}</div>
-        </div>
-      </li>
+    <Card
+      onClick={() => {
+        setAlertDetails(trade);
+      }}
+      className={`card ${close && "closed"}`}
+    >
+      {!compressed && (
+        <li className="trader">
+          <div className="pfp">
+            <img src={user.pfp} alt="pfp" />
+          </div>
+          <div className="count">{user.count}</div>
+          <div className="names">
+            <div className="name">{user.name}</div>
+            <div className="at">{"@" + user.at}</div>
+          </div>
+        </li>
+      )}
       <li className="trade">
         <div className="logo">
           <img src={share.logo} alt="logo" />
@@ -41,43 +48,51 @@ const Trade = ({ trade }) => {
           <div className="amount">{share.amount}</div>
         </div>
       </li>
-      <li className="strategy">
-        {strategies.map((strategy, i) => {
-          if (i < 2 && strategies.length > 3) {
-            return <div className="strat">{strategy}</div>;
-          } else if (i < 2) {
-            return <div className="strat">{strategy}</div>;
-          }
-        })}
-        {strategies.length > 3 && (
-          <div className="strat">{`+ ${strategies.length - 2}`}</div>
-        )}
-      </li>
-      <li className="open">
-        <div className="date">{open}</div>
-        {close && <div className="date close">{close}</div>}
-      </li>
-      <li className="profit">
-        <label
-          className={profit.type}
-        >{`${profit.type} ${profit.amount}%`}</label>
-      </li>
-      <li className="actions">
-        <div className="likes">
-          {!likes.liked && <img src={like} alt="like" />}
-          {likes.liked && <img src={liked} alt="liked" />}
-          <div className="count">{likes.amount}</div>
-        </div>
-        <div className="bookmarks">
-          {!bookmarks.bookmarked && <img src={bookmark} alt="bookmark" />}
-          {bookmarks.bookmarked && <img src={bookmarked} alt="bookmarked" />}
-          <div className="count">{bookmarks.amount}</div>
-        </div>
-        <div className="comments">
-          <img src={comment} alt="comment" />
-          <div className="count">{comments}</div>
-        </div>
-      </li>
+      {!compressed && (
+        <li className="strategy">
+          {strategies.map((strategy, i) => {
+            if (i < 2 && strategies.length > 3) {
+              return <div className="strat">{strategy}</div>;
+            } else if (i < 2) {
+              return <div className="strat">{strategy}</div>;
+            }
+          })}
+          {strategies.length > 3 && (
+            <div className="strat">{`+ ${strategies.length - 2}`}</div>
+          )}
+        </li>
+      )}
+      {!compressed && (
+        <li className="open">
+          <div className="date">{open}</div>
+          {close && <div className="date close">{close}</div>}
+        </li>
+      )}
+      {!compressed && (
+        <li className="profit">
+          <label
+            className={profit.type}
+          >{`${profit.type} ${profit.amount}%`}</label>
+        </li>
+      )}
+      {!compressed && (
+        <li className="actions">
+          <div className="likes">
+            {!likes.liked && <img src={like} alt="like" />}
+            {likes.liked && <img src={liked} alt="liked" />}
+            <div className="count">{likes.amount}</div>
+          </div>
+          <div className="bookmarks">
+            {!bookmarks.bookmarked && <img src={bookmark} alt="bookmark" />}
+            {bookmarks.bookmarked && <img src={bookmarked} alt="bookmarked" />}
+            <div className="count">{bookmarks.amount}</div>
+          </div>
+          <div className="comments">
+            <img src={comment} alt="comment" />
+            <div className="count">{comments}</div>
+          </div>
+        </li>
+      )}
     </Card>
   );
 };
@@ -91,6 +106,13 @@ const Card = styled.ul`
   margin-bottom: 0.6rem;
   position: relative;
   background: white;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  transition: 0.5s;
+  :hover {
+    transform: scale(1.01);
+  }
   .trader,
   .trade {
     display: flex;
@@ -127,12 +149,13 @@ const Card = styled.ul`
       background: #00a5ea;
       color: white;
       font-size: 10px;
-      width: fit-content;
+      width: 15px;
+      height: 15px;
       padding: 0.2rem;
-      border-radius: 100px;
+      border-radius: 15px;
       position: absolute;
       top: 0.4rem;
-      left: 3.3rem;
+      left: 4rem;
     }
   }
   .strategy {
@@ -140,8 +163,8 @@ const Card = styled.ul`
     flex-wrap: wrap;
     .strat {
       padding: 0.3rem;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
+      padding-left: 0.7rem;
+      padding-right: 0.7rem;
       border-radius: 8px;
       margin-right: 0.3rem;
     }
@@ -179,6 +202,7 @@ const Card = styled.ul`
     align-items: center;
     position: relative;
     right: 1rem;
+    cursor: pointer;
     div {
       padding: 0;
       display: flex;

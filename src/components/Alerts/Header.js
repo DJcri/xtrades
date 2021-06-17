@@ -24,6 +24,7 @@ const Header = () => {
           <img src={add} alt="add" /> Invite a friend
         </Button>
         <img src={bell} alt="bell" />
+        <div className="bell-indicator"></div>
         <img src={messages} alt="messages" />
         <img src={settings} alt="settings" />
         <div className="pfp">
@@ -43,6 +44,7 @@ const Bar = styled.div`
   padding: 2rem;
   border-bottom: 1px rgba(60, 60, 67, 0.08) solid;
   nav {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -50,6 +52,15 @@ const Bar = styled.div`
     img {
       width: 20px;
       cursor: pointer;
+    }
+    .bell-indicator {
+      background: #00a5ea;
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      position: absolute;
+      right: 11.8rem;
+      top: 0.2rem;
     }
   }
   .pfp {
@@ -71,10 +82,7 @@ const Bar = styled.div`
       left: 2rem;
     }
     input {
-      border: none;
       background: #f5f8fb;
-      color: #a2b1c3;
-      font-size: 14px;
       width: 536px;
       height: fit-content;
       padding-left: 3rem;
@@ -82,15 +90,9 @@ const Bar = styled.div`
       padding-bottom: 0.8rem;
       box-sizing: border-box;
       border-radius: 10px;
-      :focus {
-        outline: none;
-      }
     }
   }
   .invite-btn {
     margin: 0;
-    img {
-      margin-right: 0.5rem;
-    }
   }
 `;

@@ -180,7 +180,7 @@ const trades = [
   },
 ];
 
-const Recent = () => {
+const Recent = ({ setAlertDetails }) => {
   return (
     <Section>
       <div className="section-header">
@@ -237,14 +237,14 @@ const Recent = () => {
       <div className="trades">
         {trades.map((trade) => {
           console.log(trade.user);
-          return <Trade trade={trade} />;
+          return <Trade setAlertDetails={setAlertDetails} trade={trade} />;
         })}
       </div>
     </Section>
   );
 };
 
-export default Recent;
+export { Recent, trades };
 
 const Section = styled.div`
   padding: 2rem;
