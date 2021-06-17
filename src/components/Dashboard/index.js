@@ -20,6 +20,7 @@ const Dashboard = ({ dashboardMini, setDashboardMini }) => {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 4;
     .logo {
       color: white;
       font-weight: bold;
