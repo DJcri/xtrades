@@ -67,7 +67,7 @@ const Dashboard = ({ dashboardMini, setDashboardMini }) => {
     }
     .links {
       list-style: none;
-      margin-top: 5vh;
+      margin-top: 2vh;
       padding: ${dashboardMini ? "0" : "1rem"};
       width: ${dashboardMini ? "60%" : "218px"};
       padding-bottom: 0;
