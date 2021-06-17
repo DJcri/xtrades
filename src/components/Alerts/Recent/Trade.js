@@ -103,7 +103,7 @@ export default Trade;
 
 const Card = styled.ul`
   border: 1px solid #e6edf4;
-  min-width: 540px;
+  min-width: 320px;
   min-height: 72px;
   border-radius: 15px;
   margin-bottom: 0.6rem;

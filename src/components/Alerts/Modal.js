@@ -37,7 +37,12 @@ const Modal = ({ alertDetails, setAlertDetails }) => {
         <img src={close} alt="close" />
       </div>
       {alertDetails && (
-        <div className="modal">
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          className="modal"
+        >
           <div className="user-details">
             <div className="modal-header">
               <div className="pfp">
@@ -106,34 +111,38 @@ const Modal = ({ alertDetails, setAlertDetails }) => {
                   }
                 })}
               </div>
-              <p>
-                More of the same. Thursdays. Look at how we've been doing on
-                Thursdays lately (chart below). We get a pullback then a rise.
-                The one hour chart always gets to a bottom point and we rise
-                from there. Let's see how the day goes from here. This SPY
-                417.6ish line is old support and resistance, showing us how
-                unstable we are at this point.
-              </p>
-              <p>
-                On a possible rise we need to keep an eye on is EOG. 86.6 is the
-                breakout point. However 85.5 is where it's currently struggling.
-                It was upgraded this morning and increased PT.
-              </p>
-              <p>
-                Please don't look at meme plays where they could have doubled
-                your accounts if you'd only played them larger. They can also
-                destroy your account in a flash. Play wisely. Know your limits.
-                Trading is NOT a tool to make you rich overnight. It's a
-                process. A mind set.
-              </p>
+              <div className="paragraph-container">
+                <p>
+                  More of the same. Thursdays. Look at how we've been doing on
+                  Thursdays lately (chart below). We get a pullback then a rise.
+                  The one hour chart always gets to a bottom point and we rise
+                  from there. Let's see how the day goes from here. This SPY
+                  417.6ish line is old support and resistance, showing us how
+                  unstable we are at this point.
+                </p>
+                <p>
+                  On a possible rise we need to keep an eye on is EOG. 86.6 is
+                  the breakout point. However 85.5 is where it's currently
+                  struggling. It was upgraded this morning and increased PT.
+                </p>
+                <p>
+                  Please don't look at meme plays where they could have doubled
+                  your accounts if you'd only played them larger. They can also
+                  destroy your account in a flash. Play wisely. Know your
+                  limits. Trading is NOT a tool to make you rich overnight. It's
+                  a process. A mind set.
+                </p>
+              </div>
               <div className="img-container">
                 <img src={graph1} alt="graph" />
               </div>
-              <img src={pfpMini} alt="pfp" className="pfp" />
-              <img src={emoji} alt="emoji" className="emoji" />
-              <img src={attach} alt="attach" className="attach" />
-              <textarea placeholder="Write your message..." />
-              <Button className="send-btn">Send</Button>
+              <div className="message">
+                <img src={pfpMini} alt="pfp" className="pfp" />
+                <img src={emoji} alt="emoji" className="emoji" />
+                <img src={attach} alt="attach" className="attach" />
+                <textarea placeholder="Write your message..." />
+                <Button className="send-btn">Send</Button>
+              </div>
             </div>
           </div>
         </div>
@@ -156,24 +165,58 @@ const Box = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  p {
-    margin-bottom: 2rem;
-    color: #77869f;
+  .paragraph-container {
+    overflow-y: scroll;
+    max-height: 250px;
+    p {
+      margin-bottom: 2rem;
+      color: #77869f;
+    }
   }
-  textarea {
-    background: #f5f8fb;
-    border: 1px solid #e6e9ec;
-    box-sizing: border-box;
-    z-index: 10;
-    width: 100%;
-    height: 8rem;
-    position: relative;
-    bottom: 1rem;
-    padding: 2rem;
-    padding-left: 5rem;
-    padding-right: 7rem;
-    border-radius: 15px;
-    overflow: hidden;
+  .message {
+    position: absolute;
+    bottom: 12rem;
+    textarea {
+      width: 100%;
+      background: #f5f8fb;
+      border: 1px solid #e6e9ec;
+      box-sizing: border-box;
+      z-index: 10;
+      height: 8rem;
+      padding: 2rem;
+      padding-left: 5rem;
+      padding-right: 7rem;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .pfp,
+    .emoji,
+    .attach {
+      width: 50px;
+      position: absolute;
+      left: 1rem;
+      z-index: 12;
+    }
+    .pfp {
+      top: 1rem;
+    }
+    .emoji,
+    .attach {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      width: 15px;
+      cursor: pointer;
+    }
+    .attach {
+      left: 3rem;
+    }
+    .send-btn {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 12;
+    }
   }
   .card {
     display: flex;
@@ -246,31 +289,9 @@ const Box = styled.div`
     .trade-body {
       padding: 2rem;
       position: relative;
-      .pfp,
-      .emoji,
-      .attach {
-        width: 50px;
-        position: absolute;
-        bottom: 7rem;
-        left: 3rem;
-        z-index: 12;
-      }
-      .emoji,
-      .attach {
-        width: 15px;
-        bottom: 4rem;
-        cursor: pointer;
-      }
-      .attach {
-        left: 5rem;
-      }
-      .send-btn {
-        position: absolute;
-        bottom: 4rem;
-        right: 2.5rem;
-        z-index: 12;
-      }
+      height: 100%;
       .img-container {
+        margin-top: 3rem;
         overflow: hidden;
         height: 10vh;
         img {
@@ -312,12 +333,12 @@ const Box = styled.div`
     display: flex;
     background: white;
     width: 60%;
-    min-width: 1000px;
     height: 816px;
     z-index: 6;
     border-radius: 15px;
     box-sizing: border-box;
     overflow: hidden;
+    position: relative;
     .trade-details {
       flex: 3;
     }
@@ -345,6 +366,7 @@ const Box = styled.div`
         ul {
           display: flex;
           justify-content: space-between;
+          flex-wrap: wrap;
           list-style-type: none;
           margin-top: 1rem;
           label {
@@ -417,6 +439,25 @@ const Box = styled.div`
         top: -0.2rem;
         left: 2.2rem;
       }
+    }
+  }
+  @media (max-width: 1400px) {
+    .modal {
+      width: 80%;
+      height: 90%;
+    }
+    .actions,
+    .profit,
+    .style,
+    .img-container img {
+      display: none;
+    }
+    .user-details {
+      max-width: 300px;
+    }
+    .card {
+      width: 100%;
+      min-width: 200px;
     }
   }
 `;
