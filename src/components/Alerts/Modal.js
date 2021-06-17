@@ -192,6 +192,9 @@ const Box = styled.div`
     .open {
       display: none;
     }
+    :hover {
+      transform: scale(1);
+    }
   }
   .tags {
     display: flex;

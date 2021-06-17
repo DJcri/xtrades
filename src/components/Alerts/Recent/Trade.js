@@ -21,7 +21,9 @@ const Trade = ({ trade, setAlertDetails, compressed }) => {
   return (
     <Card
       onClick={() => {
-        setAlertDetails(trade);
+        if (setAlertDetails) {
+          setAlertDetails(trade);
+        }
       }}
       className={`card ${close && "closed"}`}
     >
