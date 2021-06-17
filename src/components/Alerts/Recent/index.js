@@ -257,6 +257,8 @@ const Section = styled.div`
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
   .trades {
     margin-right: 1rem;
@@ -356,6 +358,23 @@ const Section = styled.div`
     align-items: center;
     .header-title {
       display: flex;
+    }
+  }
+  @media (max-width: 1400px) {
+    .section-header,
+    .flex-container {
+      justify-content: center;
+    }
+    .info-headers {
+      display: none;
+    }
+    .card {
+      flex-direction: column;
+      gap: 1rem;
+      height: fit-content;
+      padding: 1rem;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 `;

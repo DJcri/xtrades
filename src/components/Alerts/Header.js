@@ -100,4 +100,22 @@ const Bar = styled.div`
   .invite-btn {
     margin: 0;
   }
+  @media (max-width: 1400px) {
+    h2 {
+      display: none;
+    }
+    .header {
+      justify-content: center;
+    }
+    .search-bar,
+    input {
+      width: 100%;
+    }
+    .pfp {
+      display: none;
+    }
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
 `;

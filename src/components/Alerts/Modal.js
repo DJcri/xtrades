@@ -42,8 +42,8 @@ const Modal = ({ alertDetails, setAlertDetails }) => {
             <div className="modal-header">
               <div className="pfp">
                 <img src={alertDetails.user.pfp} alt="pfp" />
+                <div className="count">{alertDetails.user.count}</div>
               </div>
-              <div className="count">{alertDetails.user.count}</div>
               <div className="names">
                 <div className="name">{alertDetails.user.name}</div>
                 <div className="at">{"@" + alertDetails.user.at}</div>
@@ -414,8 +414,8 @@ const Box = styled.div`
         padding: 0.2rem;
         border-radius: 15px;
         position: absolute;
-        top: -0.5rem;
-        left: 2rem;
+        top: -0.2rem;
+        left: 2.2rem;
       }
     }
   }

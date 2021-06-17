@@ -31,8 +31,8 @@ const Trade = ({ trade, setAlertDetails, compressed }) => {
         <li className="trader">
           <div className="pfp">
             <img src={user.pfp} alt="pfp" />
+            <div className="count">{user.count}</div>
           </div>
-          <div className="count">{user.count}</div>
           <div className="names">
             <div className="name">{user.name}</div>
             <div className="at">{"@" + user.at}</div>
@@ -103,6 +103,7 @@ export default Trade;
 
 const Card = styled.ul`
   border: 1px solid #e6edf4;
+  min-width: 540px;
   min-height: 72px;
   border-radius: 15px;
   margin-bottom: 0.6rem;
@@ -156,8 +157,8 @@ const Card = styled.ul`
       padding: 0.2rem;
       border-radius: 15px;
       position: absolute;
-      top: 0.4rem;
-      left: 4rem;
+      top: -0.2rem;
+      left: 2.2rem;
     }
   }
   .strategy {

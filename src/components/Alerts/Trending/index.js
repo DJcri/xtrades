@@ -121,6 +121,7 @@ const Section = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     .header-title {
       display: flex;
     }
@@ -145,6 +146,12 @@ const Section = styled.div`
     ::-webkit-scrollbar-thumb {
       background-color: #c0cddd;
       outline: none;
+    }
+  }
+  @media (max-width: 1400px) {
+    .section-header {
+      justify-content: center;
+      gap: 1rem;
     }
   }
 `;
