@@ -104,12 +104,9 @@ const Bar = styled.div`
     h2 {
       display: none;
     }
-    .header {
-      justify-content: center;
-    }
     .search-bar,
     input {
-      width: 100%;
+      width: 100% !important;
     }
     .pfp {
       display: none;
