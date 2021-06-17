@@ -249,6 +249,7 @@ const Box = styled.div`
       .attach {
         width: 15px;
         bottom: 15rem;
+        cursor: pointer;
       }
       .attach {
         left: 5rem;
