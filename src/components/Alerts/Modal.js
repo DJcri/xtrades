@@ -223,7 +223,11 @@ const Box = styled.div`
         border-radius: 0;
         border: none;
         margin-bottom: 0;
-        margin-right: -4rem;
+        margin-right: 0;
+        padding-right: 0;
+        .messages {
+          margin-right: 0;
+        }
       }
       .tip {
         padding: 1rem;
